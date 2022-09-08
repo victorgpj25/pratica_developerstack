@@ -16,3 +16,10 @@ export async function getQuestionWithAnswers(id: number) {
 
     return questionWithAnswers
 }
+
+
+export async function validateQuestionId(id: number) {
+    const question = await questionRepository.findById(id)
+    if (!question) throw ({type: "not_found"})
+
+}

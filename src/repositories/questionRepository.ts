@@ -26,7 +26,9 @@ export async function findById(id: number) {
         where: {
             id: id,
         },
-
+        include : {
+            answers: true,
+        },
     })
     return question
 }
